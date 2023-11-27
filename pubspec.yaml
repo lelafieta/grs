@@ -51,6 +51,10 @@ dependencies:
   dio: ^5.3.3
   animated: ^2.0.0
   button_animations: ^2.0.0+3
+  form_builder_validators: ^9.1.0
+  custom_radio_grouped_button: ^2.2.1
+  select_dialog: ^2.0.1
+  speed_dial_fab: ^2.3.0
 
 dev_dependencies:
   flutter_test:

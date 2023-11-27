@@ -9,6 +9,7 @@ import 'package:grs/presentation/screens/home/admin/vigilant_screen.dart';
 import 'package:grs/presentation/screens/qr_screen.dart';
 import 'package:grs/utils/app_colors.dart';
 import 'package:grs/utils/app_icons.dart';
+import 'package:speed_dial_fab/speed_dial_fab.dart';
 
 class MainAdminScreen extends StatefulWidget {
   const MainAdminScreen({super.key});
@@ -29,6 +30,29 @@ class _MainAdminScreenState extends State<MainAdminScreen> {
   @override
   void initState() {
     super.initState();
+  }
+
+  /// and then assign it to the our widget library
+  Widget float1() {
+    return Container(
+      child: FloatingActionButton(
+        onPressed: null,
+        heroTag: "btn1",
+        tooltip: 'First button',
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+
+  Widget float2() {
+    return Container(
+      child: FloatingActionButton(
+        onPressed: null,
+        heroTag: "btn2",
+        tooltip: 'Second button',
+        child: Icon(Icons.add),
+      ),
+    );
   }
 
   @override
@@ -190,16 +214,41 @@ class _MainAdminScreenState extends State<MainAdminScreen> {
           ),
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColors.SECOND_COLOR,
-        onPressed: () async {
-          Get.to(QrScreen());
-        },
-        child: SvgPicture.asset(
-          AppIcons.QR_CODE,
-          color: Colors.white,
-          width: 30,
+      floatingActionButtonLocation:
+          FloatingActionButtonLocation.miniCenterFloat,
+
+      // floatingActionButton: FloatingActionButton(
+      //   backgroundColor: AppColors.SECOND_COLOR,
+      //   onPressed: () async {
+      //     Get.to(QrScreen());
+      //   },
+      //   child: SvgPicture.asset(
+      //     AppIcons.QR_CODE,
+      //     color: Colors.white,
+      //     width: 30,
+      //   ),
+      // ),
+      floatingActionButton: Container(
+        child: SpeedDialFabWidget(
+          secondaryIconsList: [
+            Icons.content_copy,
+            Icons.content_paste,
+            Icons.content_cut,
+          ],
+          secondaryIconsText: [
+            "copy",
+            "paste",
+            "cut",
+          ],
+          secondaryIconsOnPress: [
+            () => {},
+            () => {},
+            () => {},
+          ],
+          secondaryBackgroundColor: Colors.grey[900]!,
+          secondaryForegroundColor: Colors.grey[100]!,
+          primaryBackgroundColor: Colors.grey[900]!,
+          primaryForegroundColor: Colors.grey[100]!,
         ),
       ),
       body: widgets[selectedWidget],
