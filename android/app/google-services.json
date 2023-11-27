@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "248670712816",
+    "firebase_url": "https://grs-app-402508-default-rtdb.firebaseio.com",
+    "project_id": "grs-app-402508",
+    "storage_bucket": "grs-app-402508.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:248670712816:android:af5dc3e003f24c049da335",
+        "android_client_info": {
+          "package_name": "grs.afrizona.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAF-HjvsL8QgiKJAEC6zsi5aR5SXZom8d4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
