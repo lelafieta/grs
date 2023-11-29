@@ -9,8 +9,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grs/data/repositories/auth_repository.dart';
+import 'package:grs/logic/bloc/user_bloc.dart';
 import 'package:grs/logic/cubit/auth_cubit.dart';
-import 'package:grs/logic/state/auth/auth_state.dart';
+import 'package:grs/logic/event/auth_event.dart';
 import 'package:grs/presentation/screens/camera_screen.dart';
 import 'package:grs/presentation/screens/home/admin/home_screen.dart';
 import 'package:grs/presentation/screens/home/admin/main_admin_screen.dart';
@@ -18,6 +20,8 @@ import 'package:grs/utils/app_colors.dart';
 import 'package:grs/utils/app_icons.dart';
 import 'package:grs/utils/app_images.dart';
 import 'package:simple_annimated_staggered/simple_annimated_staggered.dart';
+
+import '../../logic/state/auth_state.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -27,21 +31,22 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  late final AuthCubit authCubit;
+  late final AuthBloc bloc;
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   ValueNotifier<bool> isObscure = ValueNotifier<bool>(true);
   final _formKey = GlobalKey<FormBuilderState>();
+  AuthRepository authRepository = AuthRepository();
   @override
   void initState() {
-    authCubit = BlocProvider.of<AuthCubit>(context);
+    bloc = AuthBloc(authRepository: authRepository);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer(
-      bloc: authCubit,
+      bloc: bloc,
       listener: (context, state) {
         if (state is AuthLoading) {
           EasyLoading.show();
@@ -223,10 +228,9 @@ class _LoginPageState extends State<LoginPage> {
                                     onPressed: () {
                                       if (_formKey.currentState!.validate() ==
                                           true) {
-                                        authCubit.authenticate(
-                                          email.text,
-                                          password.text,
-                                        );
+                                        bloc.add(AuthLoginRequestedEvent(
+                                            email: email.text,
+                                            password: password.text));
                                       }
 
                                       //Get.to(MainAdminScreen());

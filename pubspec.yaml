@@ -55,6 +55,7 @@ dependencies:
   custom_radio_grouped_button: ^2.2.1
   select_dialog: ^2.0.1
   speed_dial_fab: ^2.3.0
+  awesome_select: ^6.0.0
 
 dev_dependencies:
   flutter_test:
