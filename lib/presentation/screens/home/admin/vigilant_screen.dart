@@ -46,15 +46,15 @@ class _VigilantScreenState extends State<VigilantScreen> {
         child: Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                AppImages.BACKGROUND,
-              ),
-              fit: BoxFit.fill,
-              opacity: .5,
-            ),
-          ),
+          // decoration: BoxDecoration(
+          //   image: DecorationImage(
+          //     image: AssetImage(
+          //       AppImages.BACKGROUND,
+          //     ),
+          //     fit: BoxFit.fill,
+          //     opacity: .5,
+          //   ),
+          // ),
           child: SingleChildScrollView(
             child: Container(
               child: Column(
@@ -115,13 +115,14 @@ class _VigilantScreenState extends State<VigilantScreen> {
                   Container(
                     padding: EdgeInsets.all(10),
                     child: ListView.builder(
-                        itemCount: 100,
-                        scrollDirection: Axis.vertical,
-                        shrinkWrap: true,
-                        physics: ClampingScrollPhysics(),
-                        itemBuilder: (context, int i) {
-                          return VigilantWidget();
-                        }),
+                      itemCount: 100,
+                      scrollDirection: Axis.vertical,
+                      shrinkWrap: true,
+                      physics: ClampingScrollPhysics(),
+                      itemBuilder: (context, int i) {
+                        return VigilantWidget();
+                      },
+                    ),
                   )
                 ],
               ),

@@ -89,12 +89,12 @@ class _MainAdminScreenState extends State<MainAdminScreen> {
                         child: Column(
                           children: [
                             SvgPicture.asset(
-                              AppIcons.ROUND,
+                              AppIcons.HOME,
                               width: 25,
                               color: Colors.white.withOpacity(.8),
                             ),
                             Text(
-                              "RONDAS",
+                              "Página inicial",
                               style: GoogleFonts.russoOne(
                                 color: Colors.white.withOpacity(.8),
                               ),

@@ -8,7 +8,7 @@ import 'package:grs/utils/app_constants.dart';
 import 'package:http/http.dart' as http;
 
 class AuthRepository {
-  final _endPoint = "https://grs.afrizona.com/api/auth/login";
+  final _endPoint = "auth/login";
 
   final secureStorage = FlutterSecureStorage();
 
@@ -48,8 +48,10 @@ class AuthRepository {
   }
 
   Future<bool> authenticate(String email, String password) async {
-    var _url = Uri.parse('${_endPoint}');
+    var _url = Uri.parse('${AppConstants.BASE_URL}${_endPoint}');
     String? token = await secureStorage.read(key: "access_token");
+
+    print("${AppConstants.BASE_URL}${_endPoint}");
 
     try {
       final response = await http.post(_url, body: {
@@ -58,6 +60,8 @@ class AuthRepository {
       }, headers: {
         "Accept": "application/json",
       }).timeout(Duration(seconds: 10));
+
+      print(response.statusCode);
 
       if (response.statusCode == 200) {
         secureStorage.write(

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:grs/presentation/screens/home/admin/round_screen.dart';
 import 'package:grs/presentation/screens/home/admin/widgets/round_widget.dart';
 import 'package:grs/presentation/screens/home/admin/widgets/admin_info_widget.dart';
 import 'package:grs/presentation/screens/home/auth_screen.dart';
@@ -410,107 +411,112 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(
                     height: 20,
                   ),
-                  Container(
-                    width: double.maxFinite,
-                    padding: EdgeInsets.all(15),
-                    margin: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 21, 102, 159),
-                      borderRadius: BorderRadius.circular(20),
-                      boxShadow: [
-                        BoxShadow(
-                          offset: Offset(1, 30),
-                          spreadRadius: -15,
-                          color: Color.fromARGB(255, 21, 102, 159)
-                              .withOpacity(.10),
-                        ),
-                        BoxShadow(
-                          offset: Offset(1, 20),
-                          color:
-                              Color.fromARGB(255, 21, 102, 159).withOpacity(.6),
-                          spreadRadius: -10,
-                        ),
-                        BoxShadow(
-                          offset: Offset(1, 40),
-                          color:
-                              Color.fromARGB(255, 21, 102, 159).withOpacity(.4),
-                          spreadRadius: -20,
-                        ),
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        FittedBox(
-                          child: Row(
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  FittedBox(
-                                    child: Text(
-                                      "Rondas",
-                                      style: GoogleFonts.rajdhani(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
+                  InkWell(
+                    onTap: () {
+                      Get.to(RoundScreen());
+                    },
+                    child: Container(
+                      width: double.maxFinite,
+                      padding: EdgeInsets.all(15),
+                      margin: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 21, 102, 159),
+                        borderRadius: BorderRadius.circular(20),
+                        boxShadow: [
+                          BoxShadow(
+                            offset: Offset(1, 30),
+                            spreadRadius: -15,
+                            color: Color.fromARGB(255, 21, 102, 159)
+                                .withOpacity(.10),
+                          ),
+                          BoxShadow(
+                            offset: Offset(1, 20),
+                            color: Color.fromARGB(255, 21, 102, 159)
+                                .withOpacity(.6),
+                            spreadRadius: -10,
+                          ),
+                          BoxShadow(
+                            offset: Offset(1, 40),
+                            color: Color.fromARGB(255, 21, 102, 159)
+                                .withOpacity(.4),
+                            spreadRadius: -20,
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          FittedBox(
+                            child: Row(
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    FittedBox(
+                                      child: Text(
+                                        "Rondas",
+                                        style: GoogleFonts.rajdhani(
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Icon(
-                                            Icons.check_circle_sharp,
-                                            color: Colors.green,
-                                            size: 14,
-                                          ),
-                                          Text(
-                                            "10",
-                                            style: GoogleFonts.rajdhani(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w600,
-                                              color: Colors.white,
+                                    Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Icon(
+                                              Icons.check_circle_sharp,
+                                              color: Colors.green,
+                                              size: 14,
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        width: 6,
-                                      ),
-                                      Row(
-                                        children: [
-                                          Icon(
-                                            Icons.close_rounded,
-                                            color: Colors.red,
-                                            size: 14,
-                                          ),
-                                          Text(
-                                            "0",
-                                            style: GoogleFonts.rajdhani(
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w600,
-                                              color: Colors.white,
+                                            Text(
+                                              "10",
+                                              style: GoogleFonts.rajdhani(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w600,
+                                                color: Colors.white,
+                                              ),
                                             ),
-                                          ),
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ],
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          width: 6,
+                                        ),
+                                        Row(
+                                          children: [
+                                            Icon(
+                                              Icons.close_rounded,
+                                              color: Colors.red,
+                                              size: 14,
+                                            ),
+                                            Text(
+                                              "0",
+                                              style: GoogleFonts.rajdhani(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w600,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                        SvgPicture.asset(
-                          AppIcons.ROUND,
-                          width: 60,
-                          color: Colors.white,
-                        )
-                      ],
+                          SvgPicture.asset(
+                            AppIcons.ROUND,
+                            width: 60,
+                            color: Colors.white,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(

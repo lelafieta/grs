@@ -14,14 +14,14 @@ import 'package:quickalert/widgets/quickalert_dialog.dart';
 
 import 'package:simple_annimated_staggered/simple_annimated_staggered.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class RoundScreen extends StatefulWidget {
+  const RoundScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<RoundScreen> createState() => _RoundScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _RoundScreenState extends State<RoundScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

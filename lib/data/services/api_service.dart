@@ -7,13 +7,15 @@ import 'package:grs/utils/app_utils.dart';
 import 'package:http/http.dart' as http;
 
 class AuthService {
-  final _endPoint = 'api/auth/login'; // Substitua pela URL real
-  final _endPointCode = 'api/auth/verification/code';
-  final _endPointLogout = 'api/auth/logout';
-  final _endPointResetCode = 'api/auth/resetCode';
-  final _endPointUser = 'api/auth/user';
+  final _endPoint = 'auth/login'; // Substitua pela URL real
+  final _endPointCode = 'auth/verification/code';
+  final _endPointLogout = 'auth/logout';
+  final _endPointResetCode = 'auth/resetCode';
+  final _endPointUser = 'auth/user';
 
-  final secureStorage = FlutterSecureStorage();
+  final FlutterSecureStorage secureStorage;
+
+  AuthService(this.secureStorage);
 
   Future<Object?> authenticate(
       String username, String password, String phoneCode) async {

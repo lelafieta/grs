@@ -31,4 +31,5 @@ class AppIcons {
   static const String PHONE_ANDROID =
       "lib/resources/assets/icons/phone-android.svg";
   static const String WEATHER = "lib/resources/assets/icons/weather.svg";
+  static const String HOME = "lib/resources/assets/icons/home.svg";
 }
